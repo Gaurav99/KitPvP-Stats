@@ -1,0 +1,10 @@
+name: KitPvP-Stats
+version: 1.0
+author: Jaaster
+main: me.jaaster.plugin.Main
+
+commands:
+  stats:
+    description: View player pvp stats
+    usage: /stats [name], /stats, stat, stats [name]
+    aliases: [stat]

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KitPvP-Stats:jar">
+    <output-path>$USER_HOME$/Documents/Programming/Java/Minecraft Servers/Test 1.10/plugins</output-path>
+    <root id="archive" name="KitPvP-Stats.jar">
+      <element id="module-output" name="KitPvP-Stats" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/bukkit/craftbukkit/1.10.2-R0.1-SNAPSHOT/craftbukkit-1.10.2-R0.1-SNAPSHOT.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
