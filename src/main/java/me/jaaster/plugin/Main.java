@@ -21,7 +21,7 @@ public class Main extends JavaPlugin {
     private DataManager dataManager;
     private PluginManager manager;
     private static Main main;
-    @Override
+
     public void onEnable() {
         main = this;
         manager = getServer().getPluginManager();
@@ -32,7 +32,7 @@ public class Main extends JavaPlugin {
         registerOnlinePlayers();
     }
 
-    @Override
+
     public void onDisable() {
         saveOnlinePlayerData();
         try {
@@ -41,7 +41,6 @@ public class Main extends JavaPlugin {
             getLogger().severe("Cannot Connect to database!");
             e.printStackTrace();
         }
-
 
 
     }
@@ -61,18 +60,18 @@ public class Main extends JavaPlugin {
         manager.registerEvents(new PVPEvents(), this);
     }
 
-    private void saveOnlinePlayerData(){
-        for(UUID uuid : PlayerDataManager.getPlayerDataList().keySet()){
+    private void saveOnlinePlayerData() {
+        for (UUID uuid : PlayerDataManager.getPlayerDataList().keySet()) {
             //If Data is not associated with an online player
-            if(Bukkit.getPlayer(uuid) == null){
-               continue;
-           }
+            if (Bukkit.getPlayer(uuid) == null) {
+                continue;
+            }
 
             Player p = Bukkit.getPlayer(uuid);
 
             PlayerData pd = PlayerDataManager.getPlayerData(uuid);
 
-            if(!DataManager.hasPlayerData(p)){
+            if (!DataManager.hasPlayerData(p)) {
                 DataManager.createPlayer(p, pd.getKills(), pd.getDeaths(), pd.getDamage());
             }
 
@@ -80,10 +79,6 @@ public class Main extends JavaPlugin {
             DataManager.setDeaths(p, pd.getDeaths());
             DataManager.setDamage(p, pd.getDamage());
         }
-    }
-
-    public static Main getInstance(){
-        return main;
     }
 
 
